@@ -1,6 +1,8 @@
-# Simple Express MongoDB Crud API
+# Simple Express/MongoDB CRUD API
 
 Wrote this on my own time to intro persistence and database using MongoDB to the software engineering bootcamp I teach at. Extends previous lessons on server side using Node/Express. Local Mongo Community Edition (not Atlas) database seeding using `./data/companies.json`. See `./server.js` for main code.
+
+The class is brand new to coding so it is written as such. Things like error handling are not included. The purpose and focus was starting to build their first CRUD API.
 
 ### Setup
 
