@@ -57,6 +57,8 @@ app.get('/companies', async (req, res) => {
 })
 
 // POST to add one or many new companies
+// This design allows for single or multiple easily by making the final data shape an array
+// Useful approach for future proofing and more flexible endpoints w/o breaking single responsibility rule
 app.post('/companies/add', async (req, res) => {
   const { companies } = req.body
   const companiesCollection = await companiesToCollection('companies')
@@ -96,6 +98,10 @@ app.patch('/companies/update', async (req, res) => {
   })
 })
 
+// My approach w/ REST API design is clear endpoints and HTTP methods
+// It improves DX (developer experience) along w/ providing searchability within the overall codebase
+// Many APIs out there don't bother with other methods like PUT, PATCH, DELETE vs just GET, POST
+// Both work but I prefer the specificity unless use case where it shouldn't be used
 app.delete('/companies/delete', async (req, res) => {
   const { id } = req.body
   const companiesCollection = await getCollection('companies')
